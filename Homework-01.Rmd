@@ -13,7 +13,7 @@ library(tidyverse)
     d. What is the value of row 5, column 7 of `iowa.df`?
     e. Display the second row of `iowa.df` in its entirety.
 ```{r}
-iowa.df<-read.csv("data/iowa.csv", header=T)
+iowa.df<-read.csv("data/Iowa.csv", header=T ,sep=";")
 ```
 2. Syntax and class-typing.
     a. For each of the following commands, either explain why they should be errors, or explain the non-erroneous result.
