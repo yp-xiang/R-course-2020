@@ -82,12 +82,18 @@ MB.Ch1.4. For the data frame ais (DAAG package)
 
 (a) Use the function str() to get information on each of the columns. Determine whether any of the columns hold missing values.
 ```{r}
-
+data(ais)
+str(ais)
+sum(is.na(ais)) #大于0则存在缺失值
 ```
 
 (b) Make a table that shows the numbers of males and females for each different sport. In which sports is there a large imbalance (e.g., by a factor of more than 2:1) in the numbers of the two sexes?
 ```{r}
-
+attach(ais)
+data_ais <- data.frame(ais[,c(12,13)])
+result_ais <- aggregate(rep(1,nrow(data_ais)), data_ais, sum)
+tb <- table(sport,sex)
+which(tb[,2]/tb[,1]>2|tb[,1]/tb[,2]>2)
 ```
 MB.Ch1.6.Create a data frame called Manitoba.lakes that contains the lake’s elevation (in meters above sea level) and area (in square kilometers) as listed below. Assign the names of the lakes using the row.names() function.
                elevation  area
@@ -101,7 +107,11 @@ Gods                 178  1151
 Cross                207   755
 Playgreen            217   657
 ```{r}
-
+Manitoba.lakes <- data.frame(elevation = c(217,254,248,254,253,227,178,207,217),
+                             area = c(24387,5374,4624,2247,1353,1223,1151,755,657))
+row.names(Manitoba.lakes) <- c("Winnipeg","Winnipegosis","Manitoba","SouthernIndian","Cedar",
+                               "Island","Gods","Cross","Playgreen")
+Manitoba.lakes
 ```
 
 (a) Use the following code to plot log2(area) versus elevation, adding labeling infor- mation (there is an extreme value of area that makes a logarithmic scale pretty much essential):
@@ -125,11 +135,11 @@ title("Manitoba’s Largest Lakes")
 ```
 MB.Ch1.7. Look up the help page for the R function dotchart(). Use this function to display the areas of the Manitoba lakes (a) on a linear scale, and (b) on a logarithmic scale. Add, in each case, suitable labeling information.
 ```{r}
-dotchart(log2(area))
+dotchart(area, elevation,main = "Manitoba’s Largest Lakes",  xlab = "area",ylab = "elevation")
 ```
 
 MB.Ch1.8. Using the sum() function, obtain a lower bound for the area of Manitoba covered by water.
 ```{r}
-
+sum(Manitoba.lakes[,"area"])
 ```
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.7.9)  9 JUL 2020 21:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.7.9)  10 JUL 2020 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,50 +790,58 @@ Overfull \hbox (3.5897pt too wide) in paragraph at lines 185--185
 .6  32.9[] 
  []
 
-[2] [3]
-File: Homework1_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf
-)
-<use Homework1_files/figure-latex/unnamed-chunk-7-1.pdf>
-
-Overfull \hbox (21.07573pt too wide) in paragraph at lines 302--306
-[][]
+[2]
+Overfull \hbox (58.92137pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ##  [1]    1.00000   21.38776   41.77551   62.16327   8
+2.55102  102.93878[] 
  []
 
-File: Homework1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf
-)
-<use Homework1_files/figure-latex/unnamed-chunk-8-1.pdf>
 
-Overfull \hbox (21.07573pt too wide) in paragraph at lines 326--331
-[][]
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ##  [7]  123.32653  143.71429  164.10204  184.48980  20
+4.87755  225.26531[] 
  []
 
-[4]
-File: Homework1_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf
-)
-<use Homework1_files/figure-latex/unnamed-chunk-9-1.pdf>
 
-Overfull \hbox (21.07573pt too wide) in paragraph at lines 338--339
-[][] 
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [13]  245.65306  266.04082  286.42857  306.81633  32
+7.20408  347.59184[] 
  []
 
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
-(./Homework1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 343.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
-Package rerunfilecheck Info: File `Homework1.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
- ) 
-Here is how much of TeX's memory you used:
- 21102 strings out of 481269
- 417658 string characters out of 5923492
- 667260 words of memory out of 5000000
- 38299 multiletter control sequences out of 15000+600000
- 545230 words of font info for 75 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 57i,6n,119p,369b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Homework1.pdf (6 pages).
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [19]  367.97959  388.36735  408.75510  429.14286  44
+9.53061  469.91837[] 
+ []
+
+
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [25]  490.30612  510.69388  531.08163  551.46939  57
+1.85714  592.24490[] 
+ []
+
+
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [31]  612.63265  633.02041  653.40816  673.79592  69
+4.18367  714.57143[] 
+ []
+
+
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [37]  734.95918  755.34694  775.73469  796.12245  81
+6.51020  836.89796[] 
+ []
+
+
+Overfull \hbox (58.9213pt too wide) in paragraph at lines 282--282
+[]\TU/lmtt/m/n/10.53937 ## [43]  857.28571  877.67347  898.06122  918.44898  93
+8.83673  959.22449[] 
+ []
+
+[3
+
+! xdvipdfmx:fatal: Unable to open "Homework1.pdf".
+
+! No output PDF file written.
+! fwrite: Broken pipe
+! xelatex.exe: 
