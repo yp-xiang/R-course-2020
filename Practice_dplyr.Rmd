@@ -1,0 +1,79 @@
+---
+title: "Practice_dplyr"
+author:
+  向晏平
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: no
+classoption: "hyperref,"
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+gapminder <- readr::read_csv("data/gapminder.csv")
+view(gapminder)
+tail(gapminder) #display last 6 ob
+head(gapminder, 10) #display first 10 observations
+str(gapminder) #display the structure of gap
+
+```
+
+```
+#dplyr basics
+- filter():pick obs by values
+- select():pick vars by names
+- mutate():create new vars
+- summarise()
+- arrange():reorder the rows
+- group_by():operate on it group-by-group
+```
+
+#demo
+```{r}
+filter(gapminder, lifeExp < 29)
+filter(gapminder, country == "Mexico")
+filter(gapminder, country %in% c("Mexico","Peru"))
+filter(gapminder, country == "Mexico", year == 2002)
+x <- filter(gapminder, country == "Brazil", year > 1986)  
+mean(x$lifeExp)
+```
+```{r}
+select(gapminder, year, country, lifeExp)
+select(gapminder, 1, 2, 4) 
+select(gapminder, year:lifeExp) 
+select(gapminder, -continent, -lifeExp)
+```
+```{r}
+gap_cambodia  <- filter(gapminder, country == "Cambodia")
+gap_cambodia2 <- dplyr::select(gap_cambodia, -continent, -lifeExp) 
+```
+# `mutate()`
+```{r}
+gapminder %>%
+  mutate(gdp = pop * gdpPercap)
+```
+
+# Meet the new pipe `%>%` operator
+```{r}
+gapminder %>% head(3)
+gap_cambodia  <- gapminder %>% filter(country == "Cambodia")
+gap_cambodia2 <- gap_cambodia %>% dplyr::select(-continent, -lifeExp) 
+gap_cambodia  <- gapminder %>% 
+  filter(country == "Cambodia") %>%
+  dplyr::select(-continent, -lifeExp) 
+```
+
+# `group_by()` operates on groups
+```{r}
+gapminder %>%
+  filter(year == 2002) %>%
+  group_by(continent) %>% 
+  mutate(cont_pop = sum(pop))
+```
+

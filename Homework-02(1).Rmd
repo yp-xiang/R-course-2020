@@ -12,14 +12,29 @@ The data set calif_penn_2011.csv contains information about the housing stock of
 
 1. _Loading and cleaning_
     a. Load the data into a dataframe called `ca_pa`.
-    b. How many rows and columns does the dataframe have?
-    c. Run this command, and explain, in words, what this does:
+```{r}
+ca_pa <- readr::read_csv("data/calif_penn_2011.csv")
 ```
+    b. How many rows and columns does the dataframe have?
+```{r}
+nrow(ca_pa)
+ncol(ca_pa)
+```
+    c. Run this command, and explain, in words, what this does:
+```{r}
 colSums(apply(ca_pa,c(1,2),is.na))
 ```
+  apply()函数按指定方向作用对象一个函数，并返回与作用方向相关的一个向量或数组，在这里方向参数MARGIN选择2或c(1,2)所得结果相同。外层的colSums()函数对返回的数组按列求和，得到每个变量存在的缺失值总数。
     d. The function `na.omit()` takes a dataframe and returns a new dataframe, omitting any row containing an NA value.  Use it to purge the data set of rows with incomplete data.
+```{r}
+ca_pa_omit <- na.omit(ca_pa)
+```
     e. How many rows did this eliminate?
+```{r}
+nrow(ca_pa)-nrow(ca_pa_omit)
+```
     f. Are your answers in (c) and (e) compatible? Explain.
+  二者答案并不冲突，(c)统计各列的缺失值总和，(e)删除存在缺失值的行，两者并无相等的关系。
 
 2. _This Very New House_  
     a. The variable `Built_2005_or_later` indicates the percentage of houses in each Census tract built since 2005.  Plot median house prices against this variable.
