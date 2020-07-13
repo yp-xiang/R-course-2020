@@ -196,12 +196,19 @@ MB.Ch1.12. Write a function that calculates the proportion of values in a vector
 
 (a) Use the sequence of numbers 1, 2, . . . , 100 to check that this function gives the result that is expected.
 ```{r}
-
+x <- 1:100
+my_fun1 <- function(x){
+  l <- length(x)
+  table(x)/l
+}
 ```
 
 (b) Obtain the vector ex01.36 from the Devore6 (or Devore7) package. These data give the times required for individuals to escape from an oil platform during a drill. Use dotplot() to show the distribution of times. Calculate the proportion of escape times that exceed 7 minutes.
-```{r}
-
+```{r message=FALSE,warning=FALSE}
+library(Devore7)
+data(ex01.36)
+dotplot(ex01.36)
+sum(ex01.36[1] > 420)/length(ex01.36[[1]])
 ```
 
 MB.Ch1.18. The Rabbit data frame in the MASS library contains blood pressure change measurements on five rabbits (labeled as R1, R2, . . . ,R5) under various control and treatment conditions. Read the help file for more information. Use the unstack() function (three times) to convert Rabbit to the following form:
@@ -214,5 +221,15 @@ Treatment Dose   R1   R2   R3   R4   R5
 
 ....
 ```{r}
+data("Rabbit")
+attach(Rabbit)
+R <- cbind(Treatment = unstack(Rabbit, Treatment ~ Animal)[,1], 
+      Dose = unstack(Rabbit, Dose ~ Animal)[,1], 
+      unstack(Rabbit, BPchange ~ Animal)) 
+detach(Rabbit)
+R
+
+#require(reshape) 
+#recast(Rabbit, Treatment + Dose ~ Animal, measure.var="BPchange") 
 
 ```
